@@ -16,28 +16,28 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'mvn clean compile'
+                cmd 'mvn clean compile'
             }
         }
         
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'mvn test'
+                cmd 'mvn test'
             }
         }
         
         stage('Package') {
             steps {
                 echo 'Packaging the application...'
-                sh 'mvn package'
+                cmd 'mvn package'
             }
         }
         
         stage('Run') {
             steps {
                 echo 'Running the application...'
-                sh 'mvn exec:java'
+                cmd 'mvn exec:java'
             }
         }
     }
